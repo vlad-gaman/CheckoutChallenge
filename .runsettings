@@ -2,7 +2,7 @@
 <RunSettings>
     <RunConfiguration>
         <EnvironmentVariables>
-            <CheckoutApi>https://localhost:44332/</CheckoutApi>
+            <CheckoutApi>http://checkout-challenge.ddns.net/</CheckoutApi>
         </EnvironmentVariables>
     </RunConfiguration>
 </RunSettings>
