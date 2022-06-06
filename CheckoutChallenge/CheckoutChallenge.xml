@@ -1,0 +1,138 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CheckoutChallenge</name>
+    </assembly>
+    <members>
+        <member name="M:CheckoutChallenge.Controllers.CheckoutController.Get(System.Guid)">
+            <summary>
+            Used as keep alive of the checkout session
+            </summary>
+            <param name="guid">Checkout identifier</param>
+            <response code="200">Checkout session is alive</response>
+            <response code="404">Checkout session is dead</response>
+        </member>
+        <member name="M:CheckoutChallenge.Controllers.CheckoutController.Start">
+            <summary>
+            Starts a checkout session
+            </summary>
+            <response code="201">Checkout session Guid that is used as the identifier of the checkout</response>
+        </member>
+        <member name="M:CheckoutChallenge.Controllers.CheckoutController.Scan(System.Guid,System.String)">
+            <summary>
+            Scan a SKU in a checkout session
+            </summary>
+            <param name="guid">Checkout identifier</param>
+            <param name="sku">A SKU</param>
+            <returns>The total</returns>
+            <response code="200">Scan was successful and return current total</response>
+            <response code="404">Checkout session is dead</response>
+            <response code="404">There is no such SKU, but returns current total</response>        
+        </member>
+        <member name="M:CheckoutChallenge.Controllers.CheckoutController.EndSession(System.Guid)">
+            <summary>
+            Ends checkout session
+            </summary>
+            <param name="guid">Checkout identifier</param>
+            <returns>The total</returns>
+            <response code="200">Ending checkout session was successful and returns total</response>
+            <response code="404">Checkout session is dead</response>
+            <response code="404">There is no such SKU, but returns current total</response>        
+        </member>
+        <member name="M:CheckoutChallenge.Controllers.ItemsController.CreateItem(Interfaces.Dtos.ItemDto)">
+            <summary>
+            Creates an item
+            </summary>
+            <param name="item">A new item</param>
+            <returns>The item</returns>
+            <response code="201">Item created</response>
+            <response code="409">Item already exists with either the same id or sku</response>
+        </member>
+        <member name="M:CheckoutChallenge.Controllers.ItemsController.GetItemById(System.Int32)">
+            <summary>
+            Retrieves an item by id
+            </summary>
+            <param name="id">Item id</param>
+            <returns>The item</returns>
+            <response code="200">Item found</response>
+            <response code="404">Item not found</response>
+        </member>
+        <member name="M:CheckoutChallenge.Controllers.ItemsController.GetItemBySku(System.String)">
+            <summary>
+            Retrieves an item by sku
+            </summary>
+            <param name="sku">Item sku</param>
+            <returns>The item</returns>
+            <response code="200">Item found</response>
+            <response code="404">Item not found</response>
+        </member>
+        <member name="M:CheckoutChallenge.Controllers.ItemsController.GetAll">
+            <summary>
+            Retrieves all items
+            </summary>
+            <returns>The items</returns>
+            <response code="200">Items found</response>
+            <response code="404">If inexistent list</response>
+        </member>
+        <member name="M:CheckoutChallenge.Controllers.ItemsController.UpdateItem(System.Int32,System.Decimal)">
+            <summary>
+            Updates an items price by id
+            </summary>
+            <param name="id">Item id</param>
+            <param name="unitPrice">New unit price</param>
+            <response code="200">Update successful</response>
+            <response code="404">Item not found</response>
+        </member>
+        <member name="M:CheckoutChallenge.Controllers.ItemsController.DeleteItem(System.Int32)">
+            <summary>
+            Deletes an item by id
+            </summary>
+            <param name="id">Item id</param>
+            <response code="200">Update successful</response>
+            <response code="404">Item not found</response>
+        </member>
+        <member name="M:CheckoutChallenge.Controllers.PricingRulesController.CreateItem(Interfaces.Dtos.PricingRuleDto)">
+            <summary>
+            Retrieves a pricing rule by Id
+            </summary>
+            <param name="pricingRule">A new pricing rule</param>
+            <returns>The pricing rule</returns>
+            <response code="201">Pricing rule created</response>
+            <response code="409">Pricing rule already exists with either the same id or sku</response>
+        </member>
+        <member name="M:CheckoutChallenge.Controllers.PricingRulesController.GetItemById(System.Int32)">
+            <summary>
+            Retrieves a pricing rule by id
+            </summary>
+            <param name="id">Pricing rule id</param>
+            <returns>The pricing rule</returns>
+            <response code="200">Pricing rule found</response>
+            <response code="404">Pricing rule not found</response>
+        </member>
+        <member name="M:CheckoutChallenge.Controllers.PricingRulesController.GetAll">
+            <summary>
+            Retrieves all pricing rules
+            </summary>
+            <returns>The pricing rules</returns>
+            <response code="200">Pricing rules found</response>
+            <response code="404">If inexistent list</response>
+        </member>
+        <member name="M:CheckoutChallenge.Controllers.PricingRulesController.UpdateItem(System.Int32,System.String)">
+            <summary>
+            Updates a pricing rule data by id
+            </summary>
+            <param name="id">Pricing rule id</param>
+            <param name="data">New data</param>
+            <response code="200">Update successful</response>
+            <response code="404">Pricing rule not found</response>
+        </member>
+        <member name="M:CheckoutChallenge.Controllers.PricingRulesController.DeleteItem(System.Int32)">
+            <summary>
+            Deletes a Pricing rule by id
+            </summary>
+            <param name="id">Pricing rule id</param>
+            <response code="200">Update successful</response>
+            <response code="404">Pricing rule not found</response>
+        </member>
+    </members>
+</doc>
