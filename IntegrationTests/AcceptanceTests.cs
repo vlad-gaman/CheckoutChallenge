@@ -88,21 +88,21 @@ namespace IntegrationTests
 
             Item itemA, itemB, itemC, itemD;
             var items = CreateItems(fixture, out itemA, out itemB, out itemC, out itemD);
-            var pricingRule = CreatePricingRules(fixture, itemA, itemB);
-            list.Add(new object[] { items, pricingRule, new List<string> { itemA.Sku }, 60 });
+            var pricingRules = CreatePricingRules(fixture, itemA, itemB);
+            list.Add(new object[] { items, pricingRules, new List<string> { itemA.Sku }, 60 });
 
             items = CreateItems(fixture, out itemA, out itemB, out itemC, out itemD);
-            pricingRule = CreatePricingRules(fixture, itemA, itemB);
-            list.Add(new object[] { items, pricingRule, new List<string> { itemA.Sku, itemB.Sku }, 90 });
+            pricingRules = CreatePricingRules(fixture, itemA, itemB);
+            list.Add(new object[] { items, pricingRules, new List<string> { itemA.Sku, itemB.Sku }, 90 });
 
             items = CreateItems(fixture, out itemA, out itemB, out itemC, out itemD);
-            pricingRule = CreatePricingRules(fixture, itemA, itemB);
-            list.Add(new object[] { items, pricingRule, new List<string> { itemC.Sku, itemD.Sku, itemB.Sku, itemA.Sku }, 145 });
+            pricingRules = CreatePricingRules(fixture, itemA, itemB);
+            list.Add(new object[] { items, pricingRules, new List<string> { itemC.Sku, itemD.Sku, itemB.Sku, itemA.Sku }, 145 });
 
 
             items = CreateItems(fixture, out itemA, out itemB, out itemC, out itemD);
-            pricingRule = CreatePricingRules(fixture, itemA, itemB);
-            list.Add(new object[] { items, pricingRule, new List<string> { itemA.Sku, itemA.Sku }, 120 });
+            pricingRules = CreatePricingRules(fixture, itemA, itemB);
+            list.Add(new object[] { items, pricingRules, new List<string> { itemA.Sku, itemA.Sku }, 120 });
 
             return list;
         }
@@ -155,36 +155,119 @@ namespace IntegrationTests
 
             Item itemA, itemB, itemC, itemD;
             var items = CreateItems(fixture, out itemA, out itemB, out itemC, out itemD);
-            var pricingRule = CreatePricingRules(fixture, itemA, itemB);
-            list.Add(new object[] { items, pricingRule, new List<string> { itemA.Sku, itemA.Sku, itemA.Sku }, 150 });
+            var pricingRules = CreatePricingRules(fixture, itemA, itemB);
+            list.Add(new object[] { items, pricingRules, new List<string> { itemA.Sku, itemA.Sku, itemA.Sku }, 150 });
 
             items = CreateItems(fixture, out itemA, out itemB, out itemC, out itemD);
-            pricingRule = CreatePricingRules(fixture, itemA, itemB);
-            list.Add(new object[] { items, pricingRule, new List<string> { itemA.Sku, itemA.Sku, itemA.Sku, itemA.Sku }, 210 });
+            pricingRules = CreatePricingRules(fixture, itemA, itemB);
+            list.Add(new object[] { items, pricingRules, new List<string> { itemA.Sku, itemA.Sku, itemA.Sku, itemA.Sku }, 210 });
 
             items = CreateItems(fixture, out itemA, out itemB, out itemC, out itemD);
-            pricingRule = CreatePricingRules(fixture, itemA, itemB);
-            list.Add(new object[] { items, pricingRule, new List<string> { itemA.Sku, itemA.Sku, itemA.Sku, itemA.Sku, itemA.Sku }, 270 });
+            pricingRules = CreatePricingRules(fixture, itemA, itemB);
+            list.Add(new object[] { items, pricingRules, new List<string> { itemA.Sku, itemA.Sku, itemA.Sku, itemA.Sku, itemA.Sku }, 270 });
 
             items = CreateItems(fixture, out itemA, out itemB, out itemC, out itemD);
-            pricingRule = CreatePricingRules(fixture, itemA, itemB);
-            list.Add(new object[] { items, pricingRule, new List<string> { itemA.Sku, itemA.Sku, itemA.Sku, itemA.Sku, itemA.Sku, itemA.Sku }, 300 });
+            pricingRules = CreatePricingRules(fixture, itemA, itemB);
+            list.Add(new object[] { items, pricingRules, new List<string> { itemA.Sku, itemA.Sku, itemA.Sku, itemA.Sku, itemA.Sku, itemA.Sku }, 300 });
 
             items = CreateItems(fixture, out itemA, out itemB, out itemC, out itemD);
-            pricingRule = CreatePricingRules(fixture, itemA, itemB);
-            list.Add(new object[] { items, pricingRule, new List<string> { itemA.Sku, itemA.Sku, itemA.Sku, itemB.Sku }, 180 });
+            pricingRules = CreatePricingRules(fixture, itemA, itemB);
+            list.Add(new object[] { items, pricingRules, new List<string> { itemA.Sku, itemA.Sku, itemA.Sku, itemB.Sku }, 180 });
 
             items = CreateItems(fixture, out itemA, out itemB, out itemC, out itemD);
-            pricingRule = CreatePricingRules(fixture, itemA, itemB);
-            list.Add(new object[] { items, pricingRule, new List<string> { itemA.Sku, itemA.Sku, itemA.Sku, itemB.Sku, itemB.Sku }, 195 });
+            pricingRules = CreatePricingRules(fixture, itemA, itemB);
+            list.Add(new object[] { items, pricingRules, new List<string> { itemA.Sku, itemA.Sku, itemA.Sku, itemB.Sku, itemB.Sku }, 195 });
 
             items = CreateItems(fixture, out itemA, out itemB, out itemC, out itemD);
-            pricingRule = CreatePricingRules(fixture, itemA, itemB);
-            list.Add(new object[] { items, pricingRule, new List<string> { itemA.Sku, itemA.Sku, itemA.Sku, itemB.Sku, itemB.Sku, itemD.Sku }, 220 });
+            pricingRules = CreatePricingRules(fixture, itemA, itemB);
+            list.Add(new object[] { items, pricingRules, new List<string> { itemA.Sku, itemA.Sku, itemA.Sku, itemB.Sku, itemB.Sku, itemD.Sku }, 220 });
 
             items = CreateItems(fixture, out itemA, out itemB, out itemC, out itemD);
-            pricingRule = CreatePricingRules(fixture, itemA, itemB);
-            list.Add(new object[] { items, pricingRule, new List<string> { itemD.Sku, itemA.Sku, itemB.Sku, itemA.Sku, itemB.Sku, itemA.Sku }, 220 });
+            pricingRules = CreatePricingRules(fixture, itemA, itemB);
+            list.Add(new object[] { items, pricingRules, new List<string> { itemD.Sku, itemA.Sku, itemB.Sku, itemA.Sku, itemB.Sku, itemA.Sku }, 220 });
+
+            return list;
+        }
+
+        [Theory, MemberData(nameof(GenerateDataForModifiedOrAddedApplied))]
+        public async Task ModifiedAddedDealsDuringCheckout_ThoseDealsShouldNeverBeApplied(List<Item> items, List<PricingRule> pricingRules, List<(int pricingRuleId, bool toModify, PricingRule pricingRule)> modifiedPricingRulesAfterCheckout, List<string> skus, decimal expectedTotal)
+        {
+            Guid guid = Guid.Empty;
+            try
+            {
+                //setup
+                foreach (var item in items)
+                {
+                    await _itemApi.Create(item);
+                }
+                foreach (var pricingRule in pricingRules)
+                {
+                    await _pricingRuleApi.Create(pricingRule);
+                }
+                guid = await _checkoutApi.Start();
+
+                foreach (var modifiedPricingRule in modifiedPricingRulesAfterCheckout)
+                {
+                    if (modifiedPricingRule.toModify)
+                    {
+                        await _pricingRuleApi.Update(modifiedPricingRule.pricingRule.Id, modifiedPricingRule.pricingRule.Data);
+                    }
+                    else
+                    {
+                        await _pricingRuleApi.Create(modifiedPricingRule.pricingRule);
+                    }
+                }
+                //execution
+                foreach (var sku in skus)
+                {
+                    await _checkoutApi.Scan(guid, sku);
+                }
+                var total = await _checkoutApi.EndSession(guid);
+                //validation
+                total.Should().Be(expectedTotal);
+            }
+            finally
+            {
+                //cleanup
+                await CleanUp(items, pricingRules, guid);
+                foreach (var modifiedPricingRule in modifiedPricingRulesAfterCheckout)
+                {
+                    try
+                    {
+                        await _pricingRuleApi.Delete(modifiedPricingRule.pricingRule.Id);
+                    }
+                    catch (Exception e) { }
+                }
+            }
+        }
+
+        public static IEnumerable<object[]> GenerateDataForModifiedOrAddedApplied()
+        {
+            var fixture = new Fixture();
+            var list = new List<object[]>();
+
+            Item itemA, itemB, itemC, itemD;
+            var items = CreateItems(fixture, out itemA, out itemB, out itemC, out itemD);
+            var pricingRules = CreatePricingRules(fixture, itemA, itemB);
+
+            var r = new Random();
+
+            list.Add(new object[] { items, pricingRules, new List<(int pricingRuleId, bool toModify, PricingRule pricingRule)>() {
+                (pricingRules[0].Id, true, new PricingRule() 
+                {
+                    Id = pricingRules[0].Id,
+                    ItemId = pricingRules[0].ItemId,
+                    Type = pricingRules[0].Type,
+                    Data = $"{{\"MultipleUnitsPrice\":\"140\",\"NumberOfUnitsForDiscount\":\"3\"}}"
+                }),
+                (pricingRules[1].Id, false, new PricingRule()
+                {
+                    Id = r.Next(100, 1000000),
+                    ItemId = itemC.Id,
+                    Type = 0,
+                    Data = $"{{\"MultipleUnitsPrice\":\"50\",\"NumberOfUnitsForDiscount\":\"2\"}}"
+                })
+            }, new List<string> { itemA.Sku, itemA.Sku, itemA.Sku, itemC.Sku, itemC.Sku }, 210 });
 
             return list;
         }
